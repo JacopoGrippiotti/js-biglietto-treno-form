@@ -4,10 +4,14 @@
     box-sizing: border-box;
 }
 
-#chilometriInseriti{
+.chilometriInseriti{
     display: none;
 }
 
-#etàInserita{
+.etàInserita{
+    display: none;
+}
+
+#result{
     display: none;
 }
