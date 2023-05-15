@@ -28,11 +28,14 @@ priceButton.addEventListener("click", function () {
 
     let scontoOver = ((37.7 / 100) * prezzoBiglietto);
 
+    let buttonCounter = 0
+    
     if (etàPasseggero.value > 65) {
 
         prezzoBiglietto -= scontoOver;
         result.innerHTML += prezzoBiglietto.toFixed(2) + " &euro;";
         console.log(prezzoBiglietto);
+        buttonCounter += 1
     
     } 
     else if (etàPasseggero.value < 18) {
@@ -40,16 +43,25 @@ priceButton.addEventListener("click", function () {
         prezzoBiglietto -= scontoMinorenni;
         result.innerHTML += prezzoBiglietto.toFixed(2) + " &euro;";
         console.log(prezzoBiglietto);
+        buttonCounter += 1
     } 
     else {
         result.innerHTML += prezzoBiglietto.toFixed(2) + " &euro;";
+        buttonCounter += 1
     }
-
+    
     chilometriInseriti.classList.remove("displayNone");
     etàInserita.classList.remove("displayNone");
     result.classList.remove("displayNone");
 }
 )
+
+if(buttonCounter > 1){
+    chilometriInseriti.classList.add("displayNone");
+    etàInserita.classList.add("displayNone");
+    result.classList.add("displayNone");
+    
+}
 
 
 
