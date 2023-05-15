@@ -1,41 +1,49 @@
-const chilometri = document.querySelector(".numeroChilometri");
+let chilometri = document.querySelector(".numeroChilometri");
 
-const etàPasseggero = document.querySelector(".userAge");
+console.log(chilometri.value + " km")
 
-const chilometriInseriti = document.querySelector("span.chilometriInseriti")
+let etàPasseggero = document.querySelector(".userAge");
 
-const etàInserita = document.querySelector("span.etàInserita")
+console.log(etàPasseggero.value + " anni")
 
-let result = document.querySelector("#result");
+let chilometriInseriti = document.querySelector("span.chilometriInseriti");
 
-let prezzoBiglietto = ((0.2333) * chilometri.value);
+chilometriInseriti.innerHTML += (chilometri.value + " km");
+
+let etàInserita = document.querySelector("span.etàInserita");
+
+etàInserita.innerHTML += (etàPasseggero.value + " anni");
+
+let result = document.querySelector("div.result");
+
+
+let prezzoBiglietto = parseInt(0.2333 * chilometri.value);
 
 let scontoMinorenni = ((19.4 / 100) * prezzoBiglietto);
 
-let scontoOver = ((37.7 / 100)* prezzoBiglietto);
-
-
-
-if (etàPasseggero > 65){
-   
-    prezzoBiglietto -= scontoOver;
-    document.getElementsByClassName("etàInserità").innerHTML += (etàPasseggero.value) + (" anni") ;
-    document.getElementById("result").innerHTML += (prezzoBiglietto.toFixed(2) + " &euro") ;
-
-} else if(etàPasseggero < 18) {
-    
-    prezzoBiglietto -= scontoMinorenni;
-    document.getElementsByClassName("chilometriInseriti").innerHTML += (chilometriInseriti.value + " Km");
-    document.getElementById("result").innerHTML += (prezzoBiglietto.toFixed(2) + " &euro") ;
-
-}
+let scontoOver = ((37.7 / 100) * prezzoBiglietto);
 
 let priceButton = document.querySelector("#prezzoBottone");
 
+if (etàPasseggero.value > 65){
+   
+    prezzoBiglietto -= scontoOver;
+    result.innerHTML += prezzoBiglietto.toFixed(2) + " &euro;"
+
+} else if(etàPasseggero.value < 18) {
+    
+    prezzoBiglietto -= scontoMinorenni;
+    result.innerHTML += prezzoBiglietto.toFixed(2) + " &euro;";
+}
+
 priceButton.addEventListener("click",function(){
+
     chilometriInseriti.classList.remove("displayNone");
     etàInserita.classList.remove("displayNone");
     result.classList.remove("displayNone")
 }
 )
+
+
+
     
