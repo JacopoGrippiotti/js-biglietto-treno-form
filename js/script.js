@@ -16,7 +16,6 @@ etàInserita.innerHTML += (etàPasseggero.value + " anni");
 
 let result = document.querySelector("div.result");
 
-
 let prezzoBiglietto = parseInt(0.2333 * chilometri.value);
 
 let scontoMinorenni = ((19.4 / 100) * prezzoBiglietto);
@@ -25,24 +24,25 @@ let scontoOver = ((37.7 / 100) * prezzoBiglietto);
 
 let priceButton = document.querySelector("#prezzoBottone");
 
-if (etàPasseggero.value > 65){
-   
+if (etàPasseggero.value > 65) {
+
     prezzoBiglietto -= scontoOver;
     result.innerHTML += prezzoBiglietto.toFixed(2) + " &euro;";
     console.log(prezzoBiglietto);
 
-} else if(etàPasseggero.value < 18) {
-    
+} 
+else if (etàPasseggero.value < 18) {
+
     prezzoBiglietto -= scontoMinorenni;
     result.innerHTML += prezzoBiglietto.toFixed(2) + " &euro;";
     console.log(prezzoBiglietto);
+} 
+else {
+    result.innerHTML += prezzoBiglietto.toFixed(2) + " &euro;";
 }
 
-
-result.innerHTML += prezzoBiglietto.toFixed(2) + " &euro;";
-
-priceButton.addEventListener("click",function(){
-
+priceButton.addEventListener("click", function () {
+    window.location.reload()
     chilometriInseriti.classList.remove("displayNone");
     etàInserita.classList.remove("displayNone");
     result.classList.remove("displayNone");
@@ -51,4 +51,4 @@ priceButton.addEventListener("click",function(){
 
 
 
-    
+
