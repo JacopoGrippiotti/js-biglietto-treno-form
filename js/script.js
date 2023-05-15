@@ -38,6 +38,7 @@ if (etàPasseggero.value > 65){
     console.log(prezzoBiglietto);
 }
 
+
 result.innerHTML += prezzoBiglietto.toFixed(2) + " &euro;";
 
 priceButton.addEventListener("click",function(){
