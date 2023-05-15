@@ -28,7 +28,7 @@ let priceButton = document.querySelector("#prezzoBottone");
 if (etàPasseggero.value > 65){
    
     prezzoBiglietto -= scontoOver;
-    result.innerHTML += prezzoBiglietto.toFixed(2) + " &euro;"
+    result.innerHTML += prezzoBiglietto.toFixed(2) + " &euro;";
 
 } else if(etàPasseggero.value < 18) {
     
@@ -40,7 +40,7 @@ priceButton.addEventListener("click",function(){
 
     chilometriInseriti.classList.remove("displayNone");
     etàInserita.classList.remove("displayNone");
-    result.classList.remove("displayNone")
+    result.classList.remove("displayNone");
 }
 )
 
