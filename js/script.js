@@ -41,13 +41,17 @@ else {
     result.innerHTML += prezzoBiglietto.toFixed(2) + " &euro;";
 }
 
+let buttonCounter = 0;
+
 priceButton.addEventListener("click", function () {
-    window.location.reload()
     chilometriInseriti.classList.remove("displayNone");
     etàInserita.classList.remove("displayNone");
     result.classList.remove("displayNone");
+    buttonCounter += 1
 }
 )
+
+
 
 
 
