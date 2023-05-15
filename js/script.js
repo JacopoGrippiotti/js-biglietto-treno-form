@@ -29,12 +29,16 @@ if (etàPasseggero.value > 65){
    
     prezzoBiglietto -= scontoOver;
     result.innerHTML += prezzoBiglietto.toFixed(2) + " &euro;";
+    console.log(prezzoBiglietto);
 
 } else if(etàPasseggero.value < 18) {
     
     prezzoBiglietto -= scontoMinorenni;
     result.innerHTML += prezzoBiglietto.toFixed(2) + " &euro;";
+    console.log(prezzoBiglietto);
 }
+
+result.innerHTML += prezzoBiglietto.toFixed(2) + " &euro;";
 
 priceButton.addEventListener("click",function(){
 
