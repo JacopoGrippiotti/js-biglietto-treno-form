@@ -2,11 +2,20 @@ const chilometri = document.getElementById("numeroChilometri");
 
 const etàPasseggero = document.getElementById("userAge");
 
-let prezzoBiglietto = (0.21 * chilometri.value);
+let prezzoBiglietto = ((0.2333) * chilometri.value);
 
-console.log(etàPasseggero.value);
+let scontoMinorenni = ((19.4 / 100) * prezzoBiglietto);
 
-console.log(chilometri.value);
+let scontoOver = ((37.7 / 100)* prezzoBiglietto);
 
-console.log(prezzoBiglietto);
+if (etàPasseggero > 65){
+   
+    prezzoBiglietto -= scontoOver;
 
+} else if(etàPasseggero < 18) {
+    
+    prezzoBiglietto -= scontoMinorenni;
+
+}
+
+console.log(prezzoBiglietto.toFixed(2) + " Є");
